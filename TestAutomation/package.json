@@ -2,11 +2,11 @@
   "name": "testautomation",
   "version": "1.0.0",
   "description": "",
-  "main": "TestAutomation.js",
+  "main": "Index.js",
   "scripts": {
-    "test": "mocha TestAutomation.js"
+    "test": "mocha Login.js"
   },
-  "author": "Harpreet SIngh",
+  "author": "Harpreet Singh",
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
