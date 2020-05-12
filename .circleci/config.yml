@@ -12,5 +12,5 @@ jobs:
           working_directory: TestAutomation
       - run:
           name: app-auto-testing
-          command: npm run Login
+          command: npm test
           working_directory: TestAutomation
