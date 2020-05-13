@@ -4,7 +4,8 @@
   "description": "",
   "main": "Index.js",
   "scripts": {
-    "test": "mocha Login.js"
+    "test": "mocha Login.js",
+    "clean": "rm -rf node_modules && rm -f package-lock.json && npm install"
   },
   "author": "Harpreet Singh",
   "license": "ISC",
