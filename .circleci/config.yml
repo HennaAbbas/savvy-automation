@@ -10,8 +10,7 @@ jobs:
           name: npm-restore-deps
           command: npm install
           working_directory: TestAutomation
-      - run: npm i -g mocha     
       - run:
           name: app-auto-testing
-          command: mocha tests/*
+          command: npm test
           working_directory: TestAutomation
