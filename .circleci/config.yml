@@ -1,17 +1,17 @@
-version: 2
-jobs:
-  build:
-    working_directory: ~/TestAutomation
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-#       - run: sudo chown -R $(whoami)
-      - run: sudo npm cache clean --force
-      - run: sudo rm -rf node_modules
-      - run: npm install
-      - run: sudo npm i -g mocha
-      - run: sudo npm mocha login.js
+# version: 2
+# jobs:
+#   build:
+#     working_directory: ~/TestAutomation
+#     docker:
+#       - image: circleci/node:latest
+#     steps:
+#       - checkout
+# #       - run: sudo chown -R $(whoami)
+#       - run: sudo npm cache clean --force
+#       - run: sudo rm -rf node_modules
+#       - run: npm install
+#       - run: sudo npm i -g mocha
+#       - run: sudo npm mocha login.js
 #       - run:
 #           name: npm-restore-deps
 #           command: npm install
@@ -21,3 +21,20 @@ jobs:
 #           command: npm test
       
 #           working_directory: TestAutomation
+  
+version: 2
+jobs:
+  build:
+    working_directory: ~/TestAutomation
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: npm-restore-deps
+          command: sudo npm install -g
+          working_directory: TestAutomation
+      - run:
+          name: app-auto-testing
+          command: sudo npm test
+          working_directory: TestAutomation
