@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
 #       - run: sudo chown -R $(whoami)
-      - run: sudo npm cache clean
+      - run: sudo npm cache clean --force
       - run: sudo rm -rf node_modules
       - run: npm install
       - run: npm i -g mocha
