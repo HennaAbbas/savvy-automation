@@ -12,5 +12,6 @@ jobs:
           working_directory: TestAutomation
       - run:
           name: app-auto-testing
-          command: mocha login.js
+          command: npm i -g mocha
+          mocha tests/*
           working_directory: TestAutomation
