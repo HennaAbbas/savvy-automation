@@ -8,9 +8,10 @@ jobs:
       - checkout
       - run:
           name: npm-restore-deps
-          command: npm install
+          command: |
+          npm install && npm i -g mocha 
           working_directory: TestAutomation
       - run:
           name: app-auto-testing
-          command: npm test
+          command: mocha login.js
           working_directory: TestAutomation
