@@ -6,12 +6,17 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run : sudo chown -R $(whoami)
-      - run:
-          name: npm-restore-deps
-          command: npm install
+      - run: sudo chown -R $(whoami)
+      - run: sudo npm cache clean
+      - run: sudo rm -rf node_modules
+      - run: npm install
+#       - run:
+#           name: npm-restore-deps
+#           command: npm install
           working_directory: TestAutomation
-      - run:
-          name: app-auto-testing
-          command: npm test
+#       - run:
+#           name: app-auto-testing
+#           command: npm test
+      - run: npm i -g mocha
+      - run: mocha tests/*
           working_directory: TestAutomation
