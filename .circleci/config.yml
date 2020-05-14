@@ -6,6 +6,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - run : sudo chown -R $(whoami)
       - run:
           name: npm-restore-deps
           command: npm install
