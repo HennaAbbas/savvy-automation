@@ -11,7 +11,7 @@ jobs:
       - run: sudo rm -rf node_modules
       - run: npm install
       - run: sudo npm i -g mocha
-      - run: sudo mocha tests/*
+      - run: sudo mocha login.js
 #       - run:
 #           name: npm-restore-deps
 #           command: npm install
